@@ -1,0 +1,22 @@
+import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
+
+@Component({
+  selector: 'app-jumbotron',
+  templateUrl: './jumbotron.component.html',
+  styleUrls: ['./jumbotron.component.scss']
+})
+export class JumbotronComponent implements OnInit {
+
+  constructor(
+    private router: Router
+  ) { }
+
+  ngOnInit(): void {
+  }
+
+  goToRegister (){
+    this.router.navigate(['register']);
+  }
+
+}

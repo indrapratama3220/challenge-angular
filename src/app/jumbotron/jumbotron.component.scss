@@ -1,0 +1,62 @@
+/* Container needed to position the button. Adjust the width as needed */
+.container {
+    position: relative;
+    width: 50%;
+  }
+  
+  /* Make the image responsive */
+  .container img {
+    width: 100%;
+    height: auto;
+  }
+  
+  /* Style the button and place it in the middle of the container/image */
+  .carousel-item .btn {
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: #DFC48D;
+    color: white;
+    font-size: 16px;
+    padding: 12px 96px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  /* Style the button and place it in the middle of the container/image */
+  .carousel-item .title{
+    position: absolute;
+    top: 73%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    
+    color: white;
+    font-size: 42px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .carousel-item .description{
+    position: absolute;
+    top: 78%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    
+    color: white;
+    font-size: 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+
+
+  .container .btn:hover {
+    background-color: black;
+  }

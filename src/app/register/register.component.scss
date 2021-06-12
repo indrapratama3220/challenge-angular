@@ -1,32 +1,4 @@
-/* Container needed to position the button. Adjust the width as needed */
-// .container {
-//     position: relative;
-//     width: 50%;
-//   }
-  
-//   /* Make the image responsive */
-//   .container img {
-//     width: 100%;
-//     height: auto;
-//   }
-  
-  /* Style the button and place it in the middle of the container/image */
-  .sub-container .btn {
-    position: absolute;
-    top: 85%;
-    left: 75%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    background-color: #DFC48D;
-    color: white;
-    font-size: 16px;
-    padding: 12px 96px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-  }
 
-  /* Style the button and place it in the middle of the container/image */
   .sub-container .title{
     position: absolute;
     top: 75%;
@@ -41,36 +13,45 @@
     border-radius: 5px;
   }
 
-  .sub-container .sub-title{
-    // position: absolute;
-    // top: 60%;
-    // left: 75%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
     
-    color: rgb(0, 0, 0);
-    font-size: 20px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-  }
 
-  .sub-container .description{
-    position: absolute;
-    top: 65%;
-    left: 75%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    
-    color: rgb(0, 0, 0);
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
+  .sub-container {
+    align-items: center;
   }
-  
 
 
   .container .btn:hover {
     background-color: black;
+  }
+
+
+  .btn {
+    background-color: #FFC106;
+    color: white;
+    font-size: 16px;
+    padding: 12px;
+    width: 80%;
+    
+    
+    justify-content: center;
+
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    
+  }
+
+
+
+.description{
+
+    justify-content: center;
+    
+    
+    width: 50%;
+    color: rgb(0, 0, 0);
+    font-size: 28px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
   }

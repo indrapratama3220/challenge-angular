@@ -22,7 +22,7 @@
   
   <div class="content">
     <div fxLayout="row wrap" fxLayoutGap="16px grid" fxGa>
-        <div fxFlex="33%" *ngFor="let num of [0,1,2,3,4,5]" let description of >
+        <div fxFlex="33%" *ngFor="let num of [0,1,2]" let description of >
             <mat-card class="mat-elevation-z4">
                 <mat-card-header style="justify-content: center;">
                   <mat-card-title style="">{{subg_title[num]}}</mat-card-title>
@@ -32,17 +32,23 @@
                   <p style="text-align: center;">
                     {{description[num]}}
                   </p>
-                </mat-card-content>
-                
+                </mat-card-content>                
               </mat-card>
+        </div>
+        <div fxFlex="33%" *ngFor="let num of [3,4,5]" let description of >
+          <mat-card class="mat-elevation-z4">
+              <mat-card-header style="justify-content: center;">
+                <mat-card-title style="">{{subg_title[num]}}</mat-card-title>
+              </mat-card-header>
 
+              <mat-card-content>
+                <p style="text-align: center;">
+                  {{description[num]}}
+                </p>
+              </mat-card-content>                
+            </mat-card>
         </div>
-        <div class="col-6">
-            <p class="description col-sm-5">Lets join us for free</p>
-        </div>
-        <div>
-            <button class="btn col-sm-5">Invest Now</button>
-        </div>
+        
     </div>
 </div>
 

@@ -11,17 +11,18 @@
     border: none;
     cursor: pointer;
     border-radius: 5px;
-  }
-
-    
+  }    
 
   .sub-container {
     align-items: center;
   }
 
 
-  .container .btn:hover {
+  .btn:hover {
     background-color: black;
+    color: #FFC106;
+    border-color:#FFC106;
+    
   }
 
 
@@ -30,8 +31,7 @@
     color: white;
     font-size: 16px;
     padding: 12px;
-    width: 80%;
-    
+    width: 95%;
     
     justify-content: center;
 
@@ -44,10 +44,7 @@
 
 
 .description{
-
     justify-content: center;
-    
-    
     width: 50%;
     color: rgb(0, 0, 0);
     font-size: 28px;

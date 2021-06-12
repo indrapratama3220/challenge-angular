@@ -1,30 +1,26 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormComponent } from './form.component';
-
+import { ProductComponent } from './components/product.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
-
-
-
-
+import { FooterModule } from '../../../../component/footer/footer.module';
 
 @NgModule({
-
-  declarations: [FormComponent],
+  declarations: [
+    ProductComponent
+  ],
   imports: [
     CommonModule,
     FlexLayoutModule,
     MatCardModule,
     MatToolbarModule,
-    MatButtonModule
-
+    MatButtonModule,
+    FooterModule
   ],
-  exports: [FormComponent]
-  
+  exports: [
+    ProductComponent
+  ]
 })
-
-
-export class FormModule { }
+export class ProductModule { }

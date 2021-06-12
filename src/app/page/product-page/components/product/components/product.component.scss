@@ -1,0 +1,49 @@
+.btn {
+    position: absolute;
+    background-color: #FFC106;
+    color: white;
+    font-size: 16px;
+    padding: 12px;
+    width: 35%;
+    left: 55%;
+    top: 180%;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+
+
+.description {
+  font-weight:bold; font-size: x-large;
+  }
+
+
+.content {
+    
+    padding-left: 30px;
+    padding-right: 30px;
+    height: auto;
+    background-color: #F5F5F5;
+}
+
+.content > mat-card {
+    margin-bottom: 100px;
+}
+
+.mat-elevation-z4 {
+    
+    justify-content: center;
+    height: auto;
+    
+}
+
+.header-product {
+  background-color: #F5F5F5;
+  
+  height: 80px;
+  font-size: 24px;
+  font-weight: 500;
+
+}

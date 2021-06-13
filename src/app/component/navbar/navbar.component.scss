@@ -1,6 +1,28 @@
+.search-bar {
+    width: 30%;
+    position: absolute;
+    left: 35%;
+    
+}
+
+
+.login {
+    width: 20%;
+    position: absolute;
+    left: 95%;
+}
+
+.navbar-search {
+    
+    height: 50px;
+}
+
+.form-control {
+    color: #246AA4;
+}
+
 
 .navbar-button:hover {
-    background-color: #246AA4;
     border-radius: 5px;
     transition: 0.5s;
 }
@@ -10,10 +32,8 @@ nav div div ul li {
     font-size: 24px;
 }
 
-// nav div div ul li a {
-    
-// }
+
 
 nav div div ul li a:hover {
-    color: white;
+    color: #246AA4;
 }

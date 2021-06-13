@@ -2,6 +2,7 @@
 .container {
     position: relative;
     width: 50%;
+    font-family: 'Open Sans', sans-serif;
   }
   
   /* Make the image responsive */
@@ -24,6 +25,7 @@
     border: none;
     cursor: pointer;
     border-radius: 5px;
+    
   }
 
   /* Style the button and place it in the middle of the container/image */
@@ -33,12 +35,12 @@
     left: 50%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
-    
     color: white;
     font-size: 36px;
     border: none;
     cursor: pointer;
     border-radius: 5px;
+    font-family: 'Nunito', sans-serif;
   }
 
   .carousel-item .description{

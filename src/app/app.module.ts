@@ -8,13 +8,15 @@ import { JumbotronModule } from './component/jumbotron/jumbotron.module';
 import { NavbarModule } from './component/navbar/navbar.module';
 import { RegisterModule } from './page/register/register.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SearchbarModule } from './component/searchbar/searchbar.module';
+
 
 
 
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +25,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     HomeModule,
     RegisterModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    SearchbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

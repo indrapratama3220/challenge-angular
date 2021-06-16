@@ -1,20 +1,31 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ProductModule } from './components/product/product.module';
-import { ProductPageComponent } from './components/product-page.component';
 
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatCardModule } from '@angular/material/card';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
 import { TemplateModule } from 'src/app/template/template.module';
+
+
+import { ProductComponent } from './components/product.component';
+
+
 
 
 
 
 @NgModule({
-  declarations: [ProductPageComponent],
+  declarations: [ ProductComponent],
   imports: [
     CommonModule,
-    ProductModule,
+    TemplateModule,
+    FlexLayoutModule,
+    MatCardModule,
+    MatToolbarModule,
+    MatButtonModule,
     TemplateModule
   ],
-  exports: [ProductPageComponent]
+  exports: [ProductComponent]
 })
 export class ProductPageModule { }

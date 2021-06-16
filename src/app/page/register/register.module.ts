@@ -1,17 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-
 import { RegisterComponent } from './components/register.component';
-
-
 import { TemplateModule } from 'src/app/template/template.module';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
-import { FormComponent } from './form/form.component';
+import { FormComponent } from './components/form/form.component';
 
 
 
@@ -25,9 +22,7 @@ const COMPONENTS = [RegisterComponent, FormComponent]
     FlexLayoutModule,
     MatCardModule,
     MatToolbarModule,
-    MatButtonModule,
-    
-    
+    MatButtonModule
   ],
   exports: [RegisterComponent]
 })

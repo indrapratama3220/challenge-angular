@@ -11,25 +11,25 @@ export class CarouselComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  
+
   sliders = [
     {
       class: 'carousel-item active',
       image: 'assets/images/carousel-1.png',
-      title: '',
-      message: ''
+      title: 'Gold Investment',
+      message: 'Invest your wealth, for the future'
     },
     {
       class: 'carousel-item',
       image: 'assets/images/carousel-2.png',
-      title: '',
-      message: ''
+      title: 'Gold Investment',
+      message: 'Invest your wealth, for the future'
     },
     {
       class: 'carousel-item',
       image: 'assets/images/carousel-3.png',
-      title: '',
-      message: ''
+      title: 'Gold Investment',
+      message: 'Invest your wealth, for the future'
     },
   ]
 }

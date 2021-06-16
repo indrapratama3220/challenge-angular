@@ -12,8 +12,19 @@ export class ProductComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  sub_title = ['Platinum Investment', 'Gold Investment', 'Silver investment']
-
-  title = 'Advantages';
+  products = [
+    {
+      title:'Platinum Investment',
+      image:'assets/images/1.png'
+    },
+    {
+      title:'Gold Investment',
+      image:'assets/images/2.png'
+    },
+    {
+      title:'Silver investment',
+      image:'assets/images/3.png'
+    }
+  ]
 
 }

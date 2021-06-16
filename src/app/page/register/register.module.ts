@@ -1,22 +1,33 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { JumbotronModule } from '../../component/jumbotron/jumbotron.module';
-import { NavbarModule } from '../../component/navbar/navbar.module';
+
+
 import { RegisterComponent } from './components/register.component';
 
-import { AppRoutingModule } from '../../app-routing.module';
-import { FormModule } from './components/form/form.module';
+
+import { TemplateModule } from 'src/app/template/template.module';
+
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatCardModule } from '@angular/material/card';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { FormComponent } from './form/form.component';
 
 
+
+const COMPONENTS = [RegisterComponent, FormComponent]
 
 @NgModule({
-  declarations: [RegisterComponent],
+  declarations: [[...COMPONENTS]],
   imports: [
     CommonModule,
-    JumbotronModule,
-    NavbarModule,
-    AppRoutingModule,
-    FormModule
+    TemplateModule,
+    FlexLayoutModule,
+    MatCardModule,
+    MatToolbarModule,
+    MatButtonModule,
+    
+    
   ],
   exports: [RegisterComponent]
 })

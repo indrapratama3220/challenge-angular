@@ -2,7 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductModule } from './components/product/product.module';
 import { ProductPageComponent } from './components/product-page.component';
-import { FooterModule } from '../../component/footer/footer.module';
+
+import { TemplateModule } from 'src/app/template/template.module';
+
 
 
 
@@ -11,7 +13,7 @@ import { FooterModule } from '../../component/footer/footer.module';
   imports: [
     CommonModule,
     ProductModule,
-    FooterModule
+    TemplateModule
   ],
   exports: [ProductPageComponent]
 })

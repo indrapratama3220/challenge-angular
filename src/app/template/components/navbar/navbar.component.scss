@@ -2,18 +2,30 @@
     width: 30%;
     position: absolute;
     left: 35%;
-    
 }
 
+.language {
+    font-size: 20px;
+    position: relative;
+    left: 45px;
+    color: black;
+}
 
-.login {
-    width: 20%;
+.btn {
+    width: 10%;
+    right: 60px;
     position: absolute;
-    left: 95%;
 }
+
+
+.container {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+
 
 .navbar-search {
-    
     height: 50px;
 }
 
@@ -37,3 +49,7 @@ nav div div ul li {
 nav div div ul li a:hover {
     color: #246AA4;
 }
+
+// nav li a {
+    
+// }

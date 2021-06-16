@@ -3,13 +3,12 @@
 
 
 <div class="content d-flex justify-content-center ">
-    <div fxLayout="row wrap" class="d-flex justify-content-center mb-4" fxLayoutGap="64px grid" fxGa>
-        <div fxFlex="33%" *ngFor="let num of [1,2,3]" let description of >
+    <div fxLayout="row wrap" class="d-flex justify-content-center mb-4" fxLayoutGap="grid" fxGa>
+        <div class="container d-flex justify-content-center col-sm-3 col-12 mb-sm-0"  *ngFor="let product of products">
             <mat-card class="mat-elevation-z4 ">
-                <img src="assets/images/{{[num]}}.png" 
-                    class="col-12">
+                <img src={{product.image}} class="col-12">
                 <mat-card-content>
-                  <p class="description mb-3">{{sub_title[num-1]}}</p>
+                  <p class="description mb-3">{{product.title}}</p>
                 </mat-card-content>
                 
             </mat-card>

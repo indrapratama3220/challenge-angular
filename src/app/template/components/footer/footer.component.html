@@ -1,0 +1,37 @@
+    <footer class="container text-dark col-12 mt-4 mb-4 ">	
+
+        <div class=" text-md-left">
+            <div class="address row text-md-left">
+                <div class="col-md-4">
+                    <p class="sub-title text-uppercase">Kantor Pusat</p>
+                        <hr class="mb-4">
+                        <div *ngFor="let address of address;">
+                            <p>{{address}}</p>
+                        </div>
+                </div>
+    
+                <div class="col-md-3">
+                    <p class="sub-title  text-uppercase">Hubungi Kami</p>
+                        <hr class="mb-4">
+                        <div *ngFor="let link of links;">
+                            <p><a href="#" class={{link.class}}></a>  {{link.title}}</p>
+                        </div>
+                </div>
+    
+                <div class="logo-mandiri col-md-5 d-flex justify-content-top flex-column">
+                    <img src="assets/images/mandiri_logo.png"  width="300" height=auto>  
+                </div>
+            </div>
+    
+            </div>
+    
+    </footer>
+    
+            
+
+
+<footer  class="footer-bottom d-flex justify-content-center flex-column"> 
+    <div>
+        <a class="footer-link d-flex justify-content-center" href="https://bankmandiri.co.id/" >© 2020 PT Bank Mandiri (Persero) Tbk.</a>
+    </div>
+</footer>

@@ -5,7 +5,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
-import { FooterModule } from '../../../../component/footer/footer.module';
+import { TemplateModule } from 'src/app/template/template.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +17,7 @@ import { FooterModule } from '../../../../component/footer/footer.module';
     MatCardModule,
     MatToolbarModule,
     MatButtonModule,
-    FooterModule
+    TemplateModule
   ],
   exports: [
     ProductComponent

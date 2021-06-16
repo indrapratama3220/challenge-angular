@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { JumbotronModule } from '../../component/jumbotron/jumbotron.module';
-import { NavbarModule } from '../../component/navbar/navbar.module';
-import { AppRoutingModule } from '../../app-routing.module';
 
+
+import { AppRoutingModule } from '../../app-routing.module';
 import { HomeComponent } from './components/home.component';
+import { TemplateModule } from 'src/app/template/template.module';
+import { ProductModule } from '../product-page/components/product/product.module';
 import { RegisterModule } from '../register/register.module';
 import { ProductPageModule } from '../product-page/product-page.module';
+
 
 
 
@@ -15,10 +17,10 @@ import { ProductPageModule } from '../product-page/product-page.module';
   imports: [
     AppRoutingModule,
     CommonModule,
-    JumbotronModule,
-    NavbarModule,
-    RegisterModule,
-    ProductPageModule
+    TemplateModule,
+    ProductModule,
+    ProductPageModule,
+    RegisterModule
   ],
   exports: [HomeComponent]
 })

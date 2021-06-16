@@ -19,4 +19,25 @@ export class JumbotronComponent implements OnInit {
     this.router.navigate(['register']);
   }
 
+  sliders = [
+    {
+      class: 'carousel-item active',
+      image: 'assets/images/carousel-1.png',
+      title: '',
+      message: ''
+    },
+    {
+      class: 'carousel-item',
+      image: 'assets/images/carousel-2.png',
+      title: '',
+      message: ''
+    },
+    {
+      class: 'carousel-item',
+      image: 'assets/images/carousel-3.png',
+      title: '',
+      message: ''
+    },
+  ]
+
 }

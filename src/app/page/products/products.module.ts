@@ -6,13 +6,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { TemplateModule } from 'src/app/template/template.module';
-
-
 import { ProductComponent } from './components/product.component';
-
-
-
-
 
 
 @NgModule({
@@ -28,4 +22,4 @@ import { ProductComponent } from './components/product.component';
   ],
   exports: [ProductComponent]
 })
-export class ProductPageModule { }
+export class ProductsModule { }

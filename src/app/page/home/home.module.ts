@@ -6,8 +6,8 @@ import { AppRoutingModule } from '../../app-routing.module';
 import { HomeComponent } from './components/home.component';
 import { TemplateModule } from 'src/app/template/template.module';
 
-import { RegisterModule } from '../register/register.module';
-import { ProductPageModule } from '../product-page/product-page.module';
+import { RegisterModule } from '../benefits/register.module';
+import { ProductsModule } from '../products/products.module';
 
 
 
@@ -18,7 +18,7 @@ import { ProductPageModule } from '../product-page/product-page.module';
     AppRoutingModule,
     CommonModule,
     TemplateModule,
-    ProductPageModule,
+    ProductsModule,
     
     RegisterModule
   ],

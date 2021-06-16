@@ -1,16 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
-
 @Component({
-  selector: 'app-form',
-  templateUrl: './form.component.html',
-  styleUrls: ['./form.component.scss']
+  selector: 'app-benefits-list',
+  templateUrl: './benefits-list.component.html',
+  styleUrls: ['./benefits-list.component.scss']
 })
-
-
-export class FormComponent implements OnInit {
-
-  subg_title = ['Delivery', 'Legality', 'Price','Reward','Transaction', 'Brand']
+export class BenefitsListComponent implements OnInit {
 
   serviceBenefits = [
     {
@@ -43,15 +38,6 @@ export class FormComponent implements OnInit {
 
   ]
 
-  description = ['We have delivery servide to all city in Indonesia',
-                  'We commit to keep your trusted with legality transaction',
-                  'Good quality with best prices',
-                  'More transaction more point and reward',
-                  'Our transaction is simple and secure',
-                  'Our product is the best on quality and brand'
-                  ]
-
-
   title = 'Advantages';
 
   gridColumns = 3;
@@ -60,6 +46,7 @@ export class FormComponent implements OnInit {
     this.gridColumns = this.gridColumns === 3 ? 4 : 3;
   }
 
+  
   constructor() { }
 
   ngOnInit(): void {

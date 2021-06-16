@@ -1,18 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { RegisterComponent } from './components/register.component';
+
 import { TemplateModule } from 'src/app/template/template.module';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
-import { FormComponent } from './components/form/form.component';
+import { BenefitsListComponent } from './components/benefits-list/benefits-list.component';
+import { BenefitsComponent } from './components/benefits.component';
 
 
 
-const COMPONENTS = [RegisterComponent, FormComponent]
+const COMPONENTS = [ BenefitsListComponent, BenefitsComponent]
 
 @NgModule({
   declarations: [[...COMPONENTS]],
@@ -24,7 +25,7 @@ const COMPONENTS = [RegisterComponent, FormComponent]
     MatToolbarModule,
     MatButtonModule
   ],
-  exports: [RegisterComponent]
+  exports: [BenefitsComponent]
 })
 
 export class RegisterModule { }

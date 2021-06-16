@@ -1,19 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
 
 @Component({
-  selector: 'app-jumbotron',
-  templateUrl: './jumbotron.component.html',
-  styleUrls: ['./jumbotron.component.scss']
+  selector: 'app-carousel',
+  templateUrl: './carousel.component.html',
+  styleUrls: ['./carousel.component.scss']
 })
-export class JumbotronComponent implements OnInit {
+export class CarouselComponent implements OnInit {
 
   constructor() { }
 
   ngOnInit(): void {
   }
-
-
+  
   sliders = [
     {
       class: 'carousel-item active',
@@ -34,5 +32,4 @@ export class JumbotronComponent implements OnInit {
       message: ''
     },
   ]
-
 }

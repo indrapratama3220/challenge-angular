@@ -1,14 +1,10 @@
 import { NgModule } from '@angular/core';
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { MatButtonModule } from '@angular/material/button';
-import { MatCardModule } from '@angular/material/card';
-import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 
-
-import { HomeModule } from './page/home/home.module';
+import { PageModule } from './page/page.module';
 import { TemplateModule } from './template/template.module';
+
 
 
 
@@ -17,9 +13,10 @@ import { TemplateModule } from './template/template.module';
   declarations: [
     AppComponent,
     
+
   ],
   imports: [
-    HomeModule,
+    PageModule,
     TemplateModule,
     BrowserModule,
     

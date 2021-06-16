@@ -28,4 +28,4 @@ const COMPONENTS = [ BenefitsListComponent, BenefitsComponent]
   exports: [BenefitsComponent]
 })
 
-export class RegisterModule { }
+export class BenefitsModule { }

@@ -11,19 +11,11 @@ import { BsNavbarDirective } from './shared/directives/bs-navbar/bs-navbar.direc
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    
-
-  ],
+  declarations: [AppComponent],
   imports: [
     PageModule,
     TemplateModule,
-    BrowserModule,
-    
-
-    
-  ],
+    BrowserModule],
   providers: [],
   bootstrap: [AppComponent]
 })

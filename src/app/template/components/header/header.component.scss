@@ -30,6 +30,8 @@
     top: 0px;
     width: 100%;
     float: left;
+    z-index: 9;
+    position: fixed;
 }
 
 .form-control {
@@ -52,7 +54,7 @@ nav div div ul li {
     height: 60px;
     position: fixed;
     width: 100%; 
-    // top: 50px;
+    
 }
 
 .navbarScroll {
@@ -60,10 +62,7 @@ nav div div ul li {
     height: 60px;
     position: fixed;
     width: 100%; 
-    // top: 50px;
 }
-
-
 
 
 nav div div ul li a:hover {

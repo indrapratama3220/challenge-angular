@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { PageComponent } from './page.component';
 import { TemplateModule } from '../template/template.module';
 import { ProductsModule } from './products/products.module';
-import { BenefitsModule } from './benefits/benefits.module';
+import { BenefitsModule } from './benefits/register.module';
 import { CarouselComponent } from './carousel/carousel.component';
 
 

@@ -13,7 +13,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ProductComponent } from './products/components/product.component';
+import { ProductComponent } from './products/product.component';
 
 
 const COMPONENTS = [PageComponent, CarouselComponent, LoginComponent, ProductComponent]

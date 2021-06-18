@@ -1,24 +1,20 @@
 <div class="d-flex justify-content-center content flex-column">
     <div fxLayout="row wrap" fxLayoutGap="" >
       
-      <div class="card" fxFlex="33%" *ngFor="let serviceBenefit of serviceBenefits">
+      <div class="card col-sm-4 col-6" *ngFor="let serviceBenefit of serviceBenefits">
           <mat-card class="mat-elevation-z4">
-            <mat-card-header style="justify-content: center;">
-              <mat-card-title>{{serviceBenefit.title}}</mat-card-title>
-            </mat-card-header>
+            <mat-card-header><mat-card-title>{{serviceBenefit.title}}</mat-card-title></mat-card-header>
             
             <mat-card-content>
-              <p style="text-align: center;">{{serviceBenefit.description}}</p>
+              <p class="description" style="text-align: center;">{{serviceBenefit.description}}</p>
             </mat-card-content>                
           </mat-card>
       </div>
       
-      <div class="card" fxFlex="33%" *ngFor="let productBenefit of productBenefits">
+      <div class="card col-sm-4 col-6"  *ngFor="let productBenefit of productBenefits">
         <mat-card class="mat-elevation-z4">
-          <mat-card-header style="justify-content: center;">
-            <mat-card-title>{{productBenefit.title}}</mat-card-title>
-          </mat-card-header>
-          <mat-card-content><p style="text-align: center;">{{productBenefit.description}}</p></mat-card-content>                
+          <mat-card-header><mat-card-title>{{productBenefit.title}}</mat-card-title></mat-card-header>
+          <mat-card-content><p class="description">{{productBenefit.description}}</p></mat-card-content>                
         </mat-card>
       </div>
         

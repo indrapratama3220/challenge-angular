@@ -1,55 +1,41 @@
 
   
-  /* Style the button and place it in the middle of the container/image */
-  .btn {
-    background-color: #FFC106;
-    color: white;
-    font-size: 16px;
-    padding: 12px;
-    width: 80%; 
-    justify-content: center;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
 
+mat-card-header {
+  justify-content: center
+}
+
+
+
+@media screen and (max-width: 600px) {
+  .description {
+    font-size: 12px;
   }
-
-
+}
 
 .description{
     justify-content: center;
-    background-color: aqua;
-    
-    width: 50%;
-    color: rgb(0, 0, 0);
-    font-size: 24px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
+    text-align: center;
   }
   
 
-mat-toolbar {
-    justify-content: space-between;
-}
-
 .content {
-    display: flex;
-    padding: 16px;
-    background-color: white;
+  display: flex;
+  padding: 16px;
+  background-color: white;
 }
 
 .content > mat-card {
-    margin-bottom: 32px;
-    width: 1000px;
-    top: 50%;
-    
+  margin-bottom: 32px;
+  width: 1000px;
+  top: 50%;
 }
 
 .mat-elevation-z4 {
     margin-bottom: 32px;
     height: 120px;
     
+
 }
 
 .card {

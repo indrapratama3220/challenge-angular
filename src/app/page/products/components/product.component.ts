@@ -18,11 +18,11 @@ export class ProductComponent implements OnInit {
       image:'assets/images/1.png'
     },
     {
-      title:'gold investment',
+      title:'gold INVESTMENT',
       image:'assets/images/2.png'
     },
     {
-      title:'silver investment',
+      title:'SILVER investment',
       image:'assets/images/3.png'
     }
   ]

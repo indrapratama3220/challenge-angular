@@ -6,16 +6,12 @@ import * as dayjs from 'dayjs';
 })
 export class CustomDatePipe implements PipeTransform {
 
-  transform(value: any, parseFormat?: string, displayFormat?: string): string {
+  transform(value: any, displayFormat?: string): string {
     if (!displayFormat) {
       displayFormat = 'dddd, MMMM DD YYYY';
     }
     
-    if (!parseFormat) {
-      parseFormat = 'dddd, DD MMMM YYYY';
-    }
-    
-    const date = dayjs(value, 'DD MMMM YYYY');
+    const date = dayjs();
 
     return date.format(displayFormat);
   }

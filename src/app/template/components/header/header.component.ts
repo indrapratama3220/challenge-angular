@@ -11,7 +11,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  
-  sampleDate = new Date();
+
+  nowDate = new Date();
 
 }

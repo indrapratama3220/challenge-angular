@@ -2,12 +2,12 @@
 <header class="header-product d-flex justify-content-center flex-column text-center">Our Products</header>
 
 
-<div class="content d-flex justify-content-center ">
+<div class="content d-flex justify-content-center">
     <div fxLayout="row wrap" class="d-flex justify-content-center mb-4" fxLayoutGap="grid" fxGa>
         <div class="container d-flex justify-content-center col-sm-3 col-12 mb-sm-0"  *ngFor="let product of products">
 
             <mat-card class="mat-elevation-z4 "><img src={{product.image}} class="col-12"><mat-card-content>
-                  <p class="description mb-3">{{product.title}}</p>
+                  <p class="description mb-3">{{product.title | titleCase}}</p>
                 </mat-card-content>                
             </mat-card>
             

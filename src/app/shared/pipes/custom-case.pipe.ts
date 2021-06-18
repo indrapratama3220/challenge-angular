@@ -1,10 +1,16 @@
 import { Pipe, PipeTransform } from '@angular/core';
-
+import { TitleCasePipe } from '@angular/common';
 
 @Pipe({
-  name: 'titleCase'
+  name: 'customCase'
 })
-export class TitleCasePipe implements PipeTransform {
+export class CustomCasePipe implements PipeTransform {
+
+  titleCase = new TitleCasePipe()
+  
+  constructor( ){
+      
+  }
 
   transform(input:string): string{
     console.log(input);
@@ -14,4 +20,5 @@ export class TitleCasePipe implements PipeTransform {
         return input.replace(/\b\w/g, first => first.toLocaleUpperCase()) 
     }
   }
+
 }

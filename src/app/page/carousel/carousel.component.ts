@@ -17,13 +17,13 @@ export class CarouselComponent implements OnInit {
       class: 'carousel-item active',
       image: 'assets/images/carousel-1.png',
       title: 'GOLD INVESTMENT',
-      message: 'Invest your wealth, for the future'
+      message: 'invest your wealth, for the future'
     },
     {
       class: 'carousel-item',
       image: 'assets/images/carousel-2.png',
       title: 'gold investment',
-      message: 'Invest your wealth, for the future'
+      message: 'invest your wealth, for the future'
     },
     {
       class: 'carousel-item',

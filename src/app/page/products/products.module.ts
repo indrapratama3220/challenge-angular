@@ -7,6 +7,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { TemplateModule } from 'src/app/template/template.module';
 import { ProductComponent } from './components/product.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { ProductComponent } from './components/product.component';
     MatCardModule,
     MatToolbarModule,
     MatButtonModule,
-    TemplateModule
+    TemplateModule,
+    SharedModule
   ],
   exports: [ProductComponent]
 })

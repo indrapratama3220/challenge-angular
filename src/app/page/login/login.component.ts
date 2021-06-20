@@ -18,8 +18,7 @@ export class LoginComponent implements OnInit {
               private utilService: UtilsService) {
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   loginForm: FormGroup = this.fb.group({
     email: ['', [Validators.required, Validators.email]],

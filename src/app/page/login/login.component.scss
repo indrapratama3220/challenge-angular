@@ -109,4 +109,24 @@ mat-card {
   
 }
 
+@media screen and (max-width: 600px) {
+
+  mat-card {
+    top: 0%;
+    position: relative;
+    max-width: 600px;
+    text-align: center;
+    max-height: 100%;
+  }
+  .btn:hover {
+    background-color: black;
+    color: #FFC106;
+    border-color:black;
+    
+  }
+  .btn {
+      color: black;
+  }
+}
+
 

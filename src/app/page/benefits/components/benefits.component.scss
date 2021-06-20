@@ -1,54 +1,31 @@
+.sub-container {
+  align-items: center;
+}
 
-  .sub-container .title{
-    position: absolute;
-    top: 75%;
-    left: 83%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    
-    color: rgb(0, 0, 0);
-    font-size: 42px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-  }    
+.btn {
+  background-color: #FFC106;
+  color: white;
+  font-size: 16px;
+  padding: 12px;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
 
-  .sub-container {
-    align-items: center;
-  }
-
-
-  .btn:hover {
+  &:hover {
     background-color: black;
     color: #FFC106;
-    border-color:#FFC106;
     
   }
+  
+}
 
-
-  .btn {
-    background-color: #FFC106;
-    color: white;
-    font-size: 16px;
-    padding: 12px;
-    
-    
-    justify-content: center;
-
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    
-  }
-
-
-
-.description{
-    justify-content: center;
-    
-    color: rgb(0, 0, 0);
-    font-size: 28px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-  }
+.benefit-title{
+  justify-content: center;
+  
+  color: rgb(0, 0, 0);
+  font-size: 28px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}

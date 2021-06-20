@@ -1,6 +1,6 @@
 .content {
-height: 100%;
-background-color: #ffebb0;
+  height: 100%;
+  background-color: #ffebb0;
 }
 
 .sub-content {
@@ -15,12 +15,13 @@ background-color: #ffebb0;
 
   height: 100%;
 }
+
 mat-card {
-    max-width: 600px;
-    top: 18%;
-    text-align: center;
-    max-height: 500px;
-  }
+  max-width: 600px;
+  top: 18%;
+  text-align: center;
+  max-height: 500px;
+}
   
   .header{
     text-align: center;
@@ -100,9 +101,6 @@ mat-card {
 
 
 
-
-
-
 .forgot-password{
   position: relative;
   height: 20px;
@@ -118,14 +116,15 @@ mat-card {
     text-align: center;
     max-height: 100%;
   }
-  .btn:hover {
-    background-color: black;
-    color: #FFC106;
-    border-color:black;
-    
-  }
+
   .btn {
       color: black;
+
+    &:hover {
+      background-color: black;
+      color: #FFC106;
+      border-color:black;
+    }
   }
 }
 

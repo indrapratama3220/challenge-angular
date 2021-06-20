@@ -6,9 +6,9 @@
 This gold-pocket that can store your wealth into a gold or something else. Here is some preview of the application.
 
 ## Login Page
-![](Images/Screen%20Shot%202021-06-01%20at%2013.15.33.png)
+![](images/login-page.png)
 ## Result in Session Storage
-![](Images/Screen%20Shot%202021-06-01%20at%2013.16.46.png)
+![](images/session-storage.png)
 
 # Table of Contents 
 

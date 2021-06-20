@@ -1,11 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms'
 import { LoginData } from 'src/app/shared/models/login';
 import { UtilsService } from 'src/app/shared/services/utils.service';
 
-
-export const AUTH_TOKEN_KEY = 'auth_token'
-export const AUTH_USER_DATA = 'user_data'
 
 @Component({
   selector: 'app-login',
@@ -14,7 +11,7 @@ export const AUTH_USER_DATA = 'user_data'
 })
 export class LoginComponent implements OnInit {
 
-
+  @Output() outputTask: EventEmitter <boolean> = new EventEmitter();
   hide: boolean = true;
 
   constructor(private fb: FormBuilder,
@@ -29,14 +26,10 @@ export class LoginComponent implements OnInit {
     password: ['', [Validators.required, Validators.minLength(6)]]
   })
 
-
   onLogin(): void {
-
+    if (!this.loginForm.valid) return;
     const loginData: LoginData = this.loginForm.value
-    if (!this.loginForm.valid) {
-      return;
-    }
-    this.utilService.login(loginData)
+    this.utilService.postLoginData(loginData)
   }
 
 }

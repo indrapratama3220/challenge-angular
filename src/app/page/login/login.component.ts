@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms'
-import { Login } from 'src/app/shared/models/login';
+import { LoginData } from 'src/app/shared/models/login';
 import { UtilsService } from 'src/app/shared/services/utils.service';
 
 
@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
 
   onLogin(): void {
 
-    const loginData: Login = this.loginForm.value
+    const loginData: LoginData = this.loginForm.value
     if (!this.loginForm.valid) {
       return;
     }

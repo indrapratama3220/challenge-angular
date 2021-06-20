@@ -1,5 +1,5 @@
 
-export interface Login {
+export interface LoginData {
     email:string | undefined | null;
     password:string | undefined | null;
 }

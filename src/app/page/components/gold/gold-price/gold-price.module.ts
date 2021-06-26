@@ -1,13 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { GoldPriceRoutingModule } from './gold-price-routing.module';
-import { GoldSellPriceComponent } from './gold-sell-price/gold-sell-price.component';
-import { GoldBuyPriceComponent } from './gold-buy-price/gold-buy-price.component';
 import { GoldPriceComponent } from './components/gold-price.component';
 import { ChartsModule } from 'ng2-charts';
+import { RouterModule } from '@angular/router';
 
 
-const COMPONENTS = [GoldSellPriceComponent, GoldBuyPriceComponent, GoldPriceComponent]
+const COMPONENTS = [GoldPriceComponent]
 
 
 @NgModule({
@@ -15,7 +14,8 @@ const COMPONENTS = [GoldSellPriceComponent, GoldBuyPriceComponent, GoldPriceComp
   imports: [
     CommonModule,
     GoldPriceRoutingModule,
-    ChartsModule
+    ChartsModule,
+    RouterModule
   ],exports:[...COMPONENTS]
 })
 export class GoldPriceModule { }

@@ -7,17 +7,20 @@ const routes: Routes = [
     path:'',
     component: GoldComponent, 
     children: [
-        {
-            path: '',
-            pathMatch:'full',
-            loadChildren: () => import('./gold-price/gold-price.module').then((m) => m.GoldPriceModule), //Lazy Load
-        },
+      {
+        path: '',
+        loadChildren: () => import('./gold-price/gold-buy-price/gold-buy-price.module').then((m) => m.GoldBuyPriceModule)
+      },
+      {
+        path: 'sell-price',
+        loadChildren: () => import('./gold-price/gold-sell-price/gold-sell-price.module').then((m) => m.GoldSellPriceModule)
+      },
     ]
   }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule ]
+  exports: [RouterModule]
 })
 export class GoldRoutingModule { }

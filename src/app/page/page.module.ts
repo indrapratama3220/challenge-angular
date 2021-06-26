@@ -12,15 +12,12 @@ import { MatIconModule } from '@angular/material/icon';
 import { PageRoutingModule } from './page-routing.module';
 import { SilverComponent } from './components/silver/silver.component';
 import { PlatinumComponent } from './components/platinum/platinum.component';
-import { ProfileComponent } from './components/profile/profile.component';
 
 
 
 
 
-
-
-const COMPONENTS = [PageComponent, SilverComponent, PlatinumComponent, ProfileComponent]
+const COMPONENTS = [PageComponent, SilverComponent, PlatinumComponent]
 const IMPORTS = [PageRoutingModule, CommonModule, TemplateModule, BenefitsModule, SharedModule, MatButtonModule, MatCardModule, MatInputModule, ReactiveFormsModule, MatIconModule]
 
 @NgModule({

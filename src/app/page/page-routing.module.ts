@@ -2,7 +2,6 @@ import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { LoginComponent } from "./components/login/login.component";
 import { PageComponent } from "./components/page.component";
-import { ProfileComponent } from "./components/profile/profile.component";
 
 
 const routes: Routes = [
@@ -13,7 +12,7 @@ const routes: Routes = [
             {
                 path: '',
                 pathMatch:'full',
-                loadChildren: () => import('./components/landing/landing.module').then((m) => m.LandingModule), //Lazy Load
+                loadChildren: () => import('./components/landing/landing.module').then((m) => m.LandingModule), 
             },
             {
                 path: 'login',
@@ -25,7 +24,7 @@ const routes: Routes = [
             },
             {
                 path: 'profile',
-                component: ProfileComponent
+                loadChildren: () => import('./components/profile/profile.module').then((m) => m.ProfileModule), 
             },
             
         ]

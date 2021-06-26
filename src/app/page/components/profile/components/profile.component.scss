@@ -17,19 +17,40 @@
 
 
 .btn {
-    height: 50px;
-    width: 150px;
-    margin-left: 20px;
+    width: 100px;
+}
+
+
+.image-profile {
+    width: 60px;
+    height: 60px;
 }
 
 
 
-.description {
-  font-weight:bold; 
-  font-size: x-large;
+
+.profile-name {
+    height: 60px;
+}
+.title {
+    font-weight:bold; 
+    font-size: x-large;
+    height: 20px;
   }
+  
+  .description {
+    padding-top: 5px;
+    font-size: large;
+    height: 15px;
+    }
 
+    .product-description {
+        height: 200px;
+    }
 
+.transaction-details {
+    height: 200px;
+}
 .content {
     padding-left: 30px;
     padding-right: 30px;
@@ -37,9 +58,6 @@
     background-color: #F5F5F5;
 }
 
-.product-description {
-    
-}
 
 .margin-top {
     margin-top: 150px;
@@ -53,7 +71,7 @@
 
 .profile {
     width: 300px;
-    height: 200px;
+    height: 400px;
 }
 
 mat-card {

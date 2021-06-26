@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class GoldBuyPriceComponent implements OnInit {
 
   public pieChartLabels1 = ['Sales Q1', 'Sales Q2', 'Sales Q3', 'Sales Q4'];
-  public pieChartData1 = [120, 150, 180, 90];
+  public pieChartData1 = [120, 150, 2000, 10];
   
   constructor() { }
 

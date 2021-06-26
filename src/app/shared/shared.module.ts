@@ -4,12 +4,13 @@ import { BsNavbarDirective } from './directives/bs-navbar/bs-navbar.directive';
 import { CustomDatePipe } from './pipes/custom-date.pipe';
 
 import { TitleCasePipe } from './pipes/title-case.pipe';
+import { BsNavbarCollapseDirective } from './directives/bs-navbar-collapse/bs-navbar-collapse.directive';
 
 
-const COMPONENTS = [BsNavbarDirective, CustomDatePipe, TitleCasePipe]
+const COMPONENTS = [BsNavbarDirective, CustomDatePipe, TitleCasePipe, BsNavbarCollapseDirective]
 
 @NgModule({
-  declarations: [...COMPONENTS],
+  declarations: [...COMPONENTS, ],
   imports: [
     CommonModule
   ],exports:[...COMPONENTS],

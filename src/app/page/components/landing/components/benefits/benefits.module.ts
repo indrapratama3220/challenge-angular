@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-
 import { TemplateModule } from 'src/app/template/template.module';
 
 import { FlexLayoutModule } from '@angular/flex-layout';

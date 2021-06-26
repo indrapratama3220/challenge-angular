@@ -33,6 +33,13 @@
         background-color: #246AA4;
         
     }
+    
+    .collapse {
+        .navbar-nav {
+            position: absolute;
+            left: 0%;
+        }
+    }
 }
 
 
@@ -80,6 +87,13 @@ nav div div ul li {
     height: 60px;
     position: fixed;
     width: 100%; 
+}
+
+.collapse {
+    .navbar-nav {
+        position: absolute;
+        right: 1%;
+    }
 }
 
 

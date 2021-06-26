@@ -1,22 +1,18 @@
 import { Directive } from '@angular/core';
 import { Input, HostListener, HostBinding } from '@angular/core';
 
-enum Position {
-  offScroll = 'top: 5px;',
-  onScroll = 'top: 0px;',
-  position = ''  
-}
 
 enum Class {
-  navbarScroll = 'navbar navbar-expand-lg navbar-light bg-white mt-0',
-  navbarTop = 'navbar navbar-expand-lg navbar-light bg-white mt-5'
+  navbarScroll = 'bg-white',
+  navbarTop = ''
 }
 
 
 @Directive({
-  selector: '[appBsNavbar]'
+  selector: '[appBsNavbarCollapse]'
 })
-export class BsNavbarDirective {
+export class BsNavbarCollapseDirective {
+
 
   @Input() name: string;
 
@@ -43,6 +39,4 @@ export class BsNavbarDirective {
   get applyStyles(): string {
     return this.navbarClass
   }
-
-
 }

@@ -1,21 +1,23 @@
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { PageModule } from './page/page.module';
 import { TemplateModule } from './template/template.module';
-import { BsNavbarDirective } from './shared/directives/bs-navbar/bs-navbar.directive';
 
 
-
-
+    
+const IMPORTS = [ AppRoutingModule, BrowserModule, BrowserAnimationsModule,TemplateModule, MatButtonModule, MatCardModule, MatInputModule, ReactiveFormsModule, MatIconModule]
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [
-    PageModule,
-    TemplateModule,
-    BrowserModule],
+  imports: [[...IMPORTS]],
   providers: [],
   bootstrap: [AppComponent]
 })

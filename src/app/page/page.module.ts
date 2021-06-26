@@ -18,7 +18,7 @@ import { PlatinumComponent } from './components/platinum/platinum.component';
 
 
 const COMPONENTS = [PageComponent, SilverComponent, PlatinumComponent]
-const IMPORTS = [PageRoutingModule, CommonModule, TemplateModule, BenefitsModule, SharedModule, MatButtonModule, MatCardModule, MatInputModule, ReactiveFormsModule, MatIconModule]
+const IMPORTS = [PageRoutingModule, CommonModule, TemplateModule, BenefitsModule, SharedModule, MatButtonModule, MatCardModule, MatInputModule, ReactiveFormsModule, MatIconModule, SharedModule]
 
 @NgModule({
   declarations: [...COMPONENTS],

@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { LandingRoutingModule } from './landing-routing.module';
 import { LandingComponent } from './components/landing.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
-import { LoginComponent } from '../login/login.component';
 import { ProductComponent } from './components/products/product.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -17,7 +16,7 @@ import { BenefitsModule } from './components/benefits/benefits.module';
 
 
 
-const COMPONENTS = [LandingComponent, CarouselComponent, LoginComponent, ProductComponent]
+const COMPONENTS = [LandingComponent, CarouselComponent, ProductComponent]
 const IMPORTS = [BenefitsModule, SharedModule, CommonModule, LandingRoutingModule, MatButtonModule, MatCardModule, MatInputModule, ReactiveFormsModule, MatIconModule]
 
 @NgModule({

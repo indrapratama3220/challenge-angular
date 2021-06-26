@@ -1,22 +1,20 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
-import { LoginComponent } from "./components/login/login.component";
 import { PageComponent } from "./components/page.component";
+import { RouteGuard } from "../shared/guards/route.guard";
 
 
 const routes: Routes = [
     {
         path:'',
-        component: PageComponent, 
+        component: PageComponent,
+        canActivate:[RouteGuard],
+        canActivateChild:[RouteGuard],  
         children: [
             {
                 path: '',
                 pathMatch:'full',
                 loadChildren: () => import('./components/landing/landing.module').then((m) => m.LandingModule), 
-            },
-            {
-                path: 'login',
-                component: LoginComponent
             },
             {
                 path: 'gold',

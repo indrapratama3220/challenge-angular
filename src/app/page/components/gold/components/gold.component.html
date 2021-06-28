@@ -4,11 +4,11 @@
     <div class="d-flex col-sm-12 mb-sm-4">
         <mat-card class="product-description mat-elevation-z4">
             <div class="row">
-                <img src="assets/images/2.png" class="col-4">
+                <img src="assets/images/{{product.productImage}}" class="col-4">
                 <div class="col-6 d-flex align-items-left flex-column justify-content-center">
-                    <p class="description mb-3">Your Gold Amount</p>
-                    <p class="title mb-3">RP 1.62000</p>
-                    <p class="description mb-3">Gold amount: 2 grams</p>
+                    <p class="description mb-3">Your {{product.productName}} Amount</p>
+                    <p class="title mb-3">Rp {{totalQty * product?.productPriceBuy}}</p>
+                    <p class="description mb-3">{{product.productName}} amount: {{totalQty}} grams</p>
                 </div>
             </div>          
         </mat-card>
@@ -17,69 +17,158 @@
             <div class="row d-flex justify-content-center">
                 <div class="col-6 d-flex align-items-left flex-column justify-content-center">
                     <p class="description mb-3">Buy Price</p>
-                    <p class="title mb-3">RP 850.000</p>
+                    <p class="title mb-3">Rp {{product?.productPriceBuy}} / gram</p>
                 </div>
 
                 <div class="col-6 d-flex align-items-left flex-column justify-content-center">
-                    <p class="description mb-3">SellPrice</p>
-                    <p class="title mb-3">RP 810.000</p>
+                    <p class="description mb-3">Sell Price</p>
+                    <p class="title mb-3">Rp {{product?.productPriceSell}} / gram</p>
                 </div>
             </div> 
         </mat-card>
 
         
     </div>
-    <div class="d-flex align-items-center col-sm-12 mb-sm-4">
-        <mat-card class="mat-elevation-z4 col-3">
-            <mat-card-content> 
-                <h3>Tabungan Emasku</h3>
-                <h4>Rp 1.620.000</h4>
-                <p>2 Gram</p>
-            </mat-card-content>                
+    <div class="d-flex align-items-left col-sm-12 mb-sm-4">
+        <mat-card class="mat-elevation-z4 col-3 align-items-left" *ngFor="let pocket of pockets">
+            <mat-card-header class="d-flex t ">
+            <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" >
+                <form class="modal-content"[formGroup]="pocketForm" (ngSubmit)="updatePocket()">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">New Pocket</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                    <div>
+                        <h5>Pocket Name</h5>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Pocket Name" formControlName="namePocket">
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button id="btnSav" type="submit" class="btn btn-primary"  [disabled]="pocketForm.invalid" >Save</button>
+                    </div>
+                </form>
+                </div>
+            </div>
+
+            </mat-card-header>
+
+            <mat-card-content>  
+                <h3>{{pocket.pocketName}}</h3>
+                <h4>Rp {{pocket.pocketQty * product?.productPriceBuy}}</h4>
+                <p>Jumlah {{product.productName}} {{pocket.pocketQty}} Grams</p>
+            </mat-card-content>   
+            <mat-card-actions>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2" (click)="setPocket(pocket)">Edit 
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="2em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 16 16"><g fill="#626262"><path d="M13.498.795l.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001zm-.644.766a.5.5 0 0 0-.707 0L1.95 11.756l-.764 3.057l3.057-.764L14.44 3.854a.5.5 0 0 0 0-.708l-1.585-1.585z"/></g></svg>
+                </button>
+    
+                <button (click)="deletePocket(pocket.id)" class="btn btn-outline-danger">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="2em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 512 512"><path fill="#626262" d="M96 472a23.82 23.82 0 0 0 23.579 24h272.842A23.82 23.82 0 0 0 416 472V152H96zm32-288h256v280H128z"/><path fill="#626262" d="M168 216h32v200h-32z"/><path fill="#626262" d="M240 216h32v200h-32z"/><path fill="#626262" d="M312 216h32v200h-32z"/><path fill="#626262" d="M328 88V40c0-13.458-9.488-24-21.6-24H205.6C193.488 16 184 26.542 184 40v48H64v32h384V88zM216 48h80v40h-80z"/></svg>
+                </button>
+              </mat-card-actions>             
         </mat-card>
-        <button class="btn btn-primary col-3">Add Pocket</button>
+
+        
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" >
+                <form class="modal-content"[formGroup]="pocketForm" (ngSubmit)="submitPocket()">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">New Pocket</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                    <div>
+                        <h5>Pocket Name</h5>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Pocket Name" formControlName="namePocket">
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button id="btnSav" type="submit" class="btn btn-primary"  [disabled]="pocketForm.invalid" >Save</button>
+                    </div>
+                </form>
+                </div>
+            </div>
+
+            <button type="button" class="btn-add-pocket btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Add Pocket
+            </button>
+          
     </div>
 
+
+            
+          
+
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Buy Gold</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Sell Gold</button>
+                </li>
+                
+              </ul>
+              <div class="tab-content mb-4 " id="myTabContent">
+                <div class=" bg-white border-right border-left border-bottom tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <div class="transaction-tab col-sm-12 border p-3">
+                        <div class="transaction-tab transaction-details d-flex align-items-left justify-content-center ">
+                        <div class="col-3 d-flex align-items-left flex-column">
+                            <p class="description mb-3 ">Value in IDR</p>
+                            <input class="form-control" type="text" placeholder="0" aria-label="default input example">
+                        </div> 
+                        <div class="col-3 d-flex align-items-left flex-column">
+                          <p class="description mb-3 ">Value in Grams</p>
+                          <input class="form-control" type="text" placeholder="0" aria-label="default input example">
+                        </div> 
+                        <div class="col-6 d-flex align-items-left flex-column">
+                          <p class="description mb-3">With Click Button Above you Agree With our Terms and Condiition</p>
+                          <button class="next-button btn btn-warning" (click)="buyTransaction()">Next</button>
+                        </div> 
+                    </div>  
+                </div> 
+                    <div style="display: block">
+                        <canvas baseChart
+                        [data]="pieChartData1"
+                        [labels]="pieChartLabels1"
+                        [chartType]="'line'"></canvas>
+                      </div>
+                </div>
+                <div class="bg-white border-right border-left border-bottom tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                    <div class="transaction-tab col-sm-12 border p-3">
+                        <div class="transaction-tab transaction-details d-flex align-items-left justify-content-center ">
+                        <div class="col-3 d-flex align-items-left flex-column">
+                            <p class="description mb-3 ">Value in IDR</p>
+                            <input class="form-control" type="text" placeholder="0" aria-label="default input example">
+                        </div> 
+                        <div class="col-3 d-flex align-items-left flex-column">
+                          <p class="description mb-3 ">Value in Grams</p>
+                          <input class="form-control" type="text" placeholder="0" aria-label="default input example">
+                        </div> 
+                        <div class="col-6 d-flex align-items-left flex-column">
+                          <p class="description mb-3">With Click Button Above you Agree With our Terms and Condiition</p>
+                          <button class="next-button btn btn-warning" (click)="sellTransaction()">Next</button>
+                        </div> 
+                    </div>  
+                </div> 
+                    <div style="display: block">
+                        <canvas baseChart
+                        [data]="pieChartData2"
+                        [labels]="pieChartLabels2"
+                        [chartType]="'line'"></canvas>
+                      </div>
+                </div>
+                
+              </div>
+
     
 
-    <ul class="nav nav-tabs">
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/gold">Buy Price</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="sell-price">Sell Price</a>
-        </li>
-    </ul>
-    <mat-card class="mb-4">
-        <router-outlet></router-outlet>
-    </mat-card>
-    
-</div> 
-</div>
+
     
 
  
 
 
-
-
-
-
-
-
-
-<!-- <header class="header-product d-flex justify-content-center flex-column text-center">Our Products</header>
-
-<div class="content d-flex justify-content-center ">
-<div fxLayout="row wrap" class="d-flex justify-content-center mb-4 flex-sm-row flex-column" >
-    <div class="container d-flex justify-content-center col-sm-3 col-10 mb-sm-0"  *ngFor="let product of products">
-
-        <mat-card class="mat-elevation-z4 mb-4 "><img src={{product.image}} class="col-12">
-            <mat-card-content>
-                <p class="description mb-3">{{product.title | titleCase}}</p>
-            </mat-card-content>                
-        </mat-card>
-        
-    </div>
-</div>
-</div> -->

@@ -10,14 +10,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { PageRoutingModule } from './page-routing.module';
-import { SilverComponent } from './components/silver/silver.component';
-import { PlatinumComponent } from './components/platinum/platinum.component';
 
 
 
 
 
-const COMPONENTS = [PageComponent, SilverComponent, PlatinumComponent]
+
+const COMPONENTS = [PageComponent]
 const IMPORTS = [PageRoutingModule, CommonModule, TemplateModule, BenefitsModule, SharedModule, MatButtonModule, MatCardModule, MatInputModule, ReactiveFormsModule, MatIconModule, SharedModule]
 
 @NgModule({

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { TransactionComponent } from './page/components/gold/transaction/transaction.component';
 
 
 
@@ -13,6 +14,10 @@ const routes: Routes = [
       path: '',
       loadChildren: () => import('./page/page.module').then(m => m.PageModule),
   },
+  {
+    path: 'transaction',
+    component:TransactionComponent
+},
   
 ]
 

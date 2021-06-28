@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GoldPriceComponent } from './gold-price.component';
+import { ReusablePageComponent } from './reusable-page.component';
 
-describe('GoldPriceComponent', () => {
-  let component: GoldPriceComponent;
-  let fixture: ComponentFixture<GoldPriceComponent>;
+describe('ReusablePageComponent', () => {
+  let component: ReusablePageComponent;
+  let fixture: ComponentFixture<ReusablePageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GoldPriceComponent ]
+      declarations: [ ReusablePageComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(GoldPriceComponent);
+    fixture = TestBed.createComponent(ReusablePageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

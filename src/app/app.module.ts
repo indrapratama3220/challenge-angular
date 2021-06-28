@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
@@ -10,10 +11,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { TemplateModule } from './template/template.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
     
-const IMPORTS = [ AppRoutingModule, BrowserModule, BrowserAnimationsModule,TemplateModule, MatButtonModule, MatCardModule, MatInputModule, ReactiveFormsModule, MatIconModule]
+const IMPORTS = [HttpClientModule, AppRoutingModule, BrowserModule, BrowserAnimationsModule,TemplateModule, MatButtonModule, MatCardModule, MatInputModule, ReactiveFormsModule, MatIconModule]
 
 @NgModule({
   declarations: [AppComponent],

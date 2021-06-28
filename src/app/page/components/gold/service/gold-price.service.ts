@@ -1,15 +1,58 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map } from 'rxjs/operators';
+import { Observable, Observer, of } from "rxjs";
+import { map, retry, tap } from "rxjs/operators";
+import { CreatePocket } from '../models/create-pocket.model';
+import { Pocket } from '../models/pocket.model';
 
 
 @Injectable({
   providedIn: 'root'
 })
-export class GoldPriceService {
+export class GoldService {
   constructor(private http: HttpClient) { }
 
-  dailyForecast() {
-    // return this.http.get("http://samples.openweathermap.org/data/2.5/history/city?q=Warren,OH&appid=b6907d289e10d714a6e88b30761fae22").map(result => result)
-        }
+  
+
+
+
+
+  getAllPocket(): Observable<any> {
+    return this.http
+    .get<any>(`http://localhost:8080/customer/40288ceb7913596e0179136d52850006/pockets`)
+    }
+
+    
+  getProductById(id:string): Observable<any> {
+    return this.http
+    .get<any>(`http://localhost:8080/product/${id}`)
+    }
+
+  createPocket(pocket: Pocket): Observable<any> {
+    return this.http
+    .post(`http://localhost:8080/pocket`, pocket)
+      .pipe(map((response: any) => response))
+    }
+
+  deletePocket(id: string): Observable<any> {
+    console.log(id);
+    console.log("testDelete");
+    return this.http.delete(`http://localhost:8080/pocket/${id}`)
+  }
+
+  updatePocket(pocket: Pocket): Observable<any> {
+    console.log(pocket);
+    console.log("test");
+    
+    return this.http
+    .put(`http://localhost:8080/pockets`, pocket)
+      .pipe(map((response: any) => response))
+    }
+
+    getHistoryPriceByProductId(id:string):Observable<any> {
+      return this
+        .http
+        .get(`http://localhost:8080/product/${id}/history`)
+          .pipe(map((response) => response));
+    }
 }

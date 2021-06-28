@@ -12,9 +12,9 @@ export class RouteGuard implements CanActivate, CanActivateChild {
     
     protected authorize(activateRoute: ActivatedRouteSnapshot,
       activateState: RouterStateSnapshot): boolean {
-        const credentials = sessionStorage.getItem('credentials');
+        const credentials = sessionStorage.getItem('id');
   
-        console.log(activateState.url);
+        
         if (!credentials) {
           // Ketika tidak ada credentials maka akan diarahkan ke login
           sessionStorage.setItem('redirectBackurl', activateState.url)

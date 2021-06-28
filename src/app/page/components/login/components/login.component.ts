@@ -1,7 +1,9 @@
 import { Component, OnInit,Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms'
-import { LoginData } from 'src/app/shared/models/login';
-import { UtilsService } from 'src/app/shared/services/utils.service';
+import { Customer } from '../../gold/models/customer.model';
+import { LoginService } from '../service/login.service';
+
+
 
 
 @Component({
@@ -14,8 +16,11 @@ export class LoginComponent implements OnInit {
   @Output() outputTask: EventEmitter <boolean> = new EventEmitter();
   hide: boolean = true;
 
+  customer: Customer;
+
   constructor(private fb: FormBuilder,
-              private utilService: UtilsService) {
+              private readonly loginService: LoginService,
+              ) {
   }
 
   ngOnInit() {}
@@ -27,8 +32,23 @@ export class LoginComponent implements OnInit {
 
   onLogin(): void {
     if (!this.loginForm.valid) return;
-    const loginData: LoginData = this.loginForm.value
-    this.utilService.postLoginData(loginData)
+    const loginData: any = this.loginForm.value;
+
+    this.loginService.login({
+      email: loginData.email,
+      password: loginData.password
+    }).subscribe((response) => {
+      if(response) {
+        console.log(response);
+        
+        this.customer = response;
+
+        sessionStorage.setItem('id', this.customer.id);
+      }
+    }), (error) => {
+      const message = error.error.error
+      alert(message)
+    }
   }
 
 }

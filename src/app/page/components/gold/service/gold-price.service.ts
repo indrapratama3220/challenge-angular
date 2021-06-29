@@ -6,6 +6,7 @@ import { CreatePocket } from '../models/create-pocket.model';
 import { Pocket } from '../models/pocket.model';
 
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -13,9 +14,13 @@ export class GoldService {
   constructor(private http: HttpClient) { }
 
   
+  buyTransaction(purchase:any): Observable<any> {
+    return this
+    .http
+      .post(`http://localhost:8080/purchase?customerId=40288ceb7913596e0179136d52850006`, purchase)
+        .pipe(map((response) => response))
 
-
-
+  }
 
   getAllPocket(): Observable<any> {
     return this.http
@@ -23,6 +28,10 @@ export class GoldService {
     }
 
     
+  getAllProduct(): Observable<any> {
+    return this.http.get<any>(`http://localhost:8080/products`)
+  }
+
   getProductById(id:string): Observable<any> {
     return this.http
     .get<any>(`http://localhost:8080/product/${id}`)

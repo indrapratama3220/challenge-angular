@@ -6,8 +6,10 @@ import { CreatePocket } from '../models/create-pocket.model';
 import { Customer } from '../models/customer.model';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { HistoryPrice } from '../models/history-price.model';
+
+import { Observable } from 'rxjs';
 
 
 
@@ -18,26 +20,33 @@ import { HistoryPrice } from '../models/history-price.model';
 })
 export class GoldComponent implements OnInit, OnChanges {
 
-  // @Input() productId: string = "";
+  @Input() id: number = 0;
 
   constructor(private readonly goldService: GoldService,
               private formBuilder: FormBuilder,
               private modalService: NgbModal,
-              private readonly activatedRoute: ActivatedRoute
+              private readonly activatedRoute: ActivatedRoute,
+              private readonly router : Router
               ) { }
   
-
+  historyPrice: HistoryPrice[] = []
   public pieChartLabels1 = [];
   public pieChartData1 = [];
-  historyPrice: HistoryPrice[] = []
-
+  
   public pieChartLabels2 = [];
   public pieChartData2 = [];
 
+
+
   productId: string = "";
   pockets: Pocket[] = [];
+  
+  products:Product[] = [];
+
   product: Product;
   pocketForm: FormGroup;
+  transactionForm: FormGroup;
+
   customer: Customer = {
     id:sessionStorage.getItem('id')
   }
@@ -53,6 +62,7 @@ export class GoldComponent implements OnInit, OnChanges {
     product:this.productTest
   };
 
+  
     
   totalQty: number = 0
 
@@ -75,18 +85,40 @@ export class GoldComponent implements OnInit, OnChanges {
   }
 
   buyTransaction(){
+    this.router.navigateByUrl('/transaction')
+    console.log(this.transactionForm.value);
+    sessionStorage.setItem('purchaseType', "0")
+    sessionStorage.setItem('productValueInGram', this.transactionForm.value.gram)
     
   }
 
   sellTransaction() {
-
+    this.router.navigateByUrl('/transaction')
+    console.log(this.transactionForm.value);
+    sessionStorage.setItem('purchaseType', "1")
+    sessionStorage.setItem('productValueInGram', this.transactionForm.value.gram)
   }
+
+  
 
   ngOnInit(): void {
 
 
     this.pocketForm = new FormGroup({
       namePocket: new FormControl('',[Validators.required])
+    })
+
+    this.transactionForm = new FormGroup({
+      gram: new FormControl('',[Validators.required]),
+      idr: new FormControl('',[Validators.required])
+    })
+
+    this
+
+    this.goldService.getAllProduct().subscribe((response) => {
+      this.products = response
+      console.log(response);
+      
     })
 
     this.activatedRoute.queryParams
@@ -101,7 +133,7 @@ export class GoldComponent implements OnInit, OnChanges {
           this.pieChartData1 = []
           this.pieChartData2 = []
         })
-
+    
         console.log(this.productId);
         console.log("test");
         
@@ -115,7 +147,7 @@ export class GoldComponent implements OnInit, OnChanges {
               this.totalQty += this.pockets[index].pocketQty;
             }
         })
-
+    
         this.goldService.getHistoryPriceByProductId(id).subscribe((response) => {
           this.historyPrice = response
           
@@ -130,6 +162,12 @@ export class GoldComponent implements OnInit, OnChanges {
 
 
     });
+    
+    
+
+    
+
+    
   }
 
   ngOnChanges(changes: SimpleChanges): void {

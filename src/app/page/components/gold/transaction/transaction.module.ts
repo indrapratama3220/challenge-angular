@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { TransactionRoutingModule } from './transaction-routing.module';
 import { TransactionComponent } from './transaction.component';
 import { RouterModule } from '@angular/router';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -13,7 +15,9 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     TransactionRoutingModule,
-    RouterModule
-  ]
+    RouterModule,
+    FormsModule
+  
+  ],exports:[TransactionComponent]
 })
 export class TransactionModule { }

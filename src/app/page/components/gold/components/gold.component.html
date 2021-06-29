@@ -115,20 +115,22 @@
               <div class="tab-content mb-4 " id="myTabContent">
                 <div class=" bg-white border-right border-left border-bottom tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                     <div class="transaction-tab col-sm-12 border p-3">
+                        <form (ngSubmit)="buyTransaction()" name="loginForm" [formGroup]="transactionForm">
                         <div class="transaction-tab transaction-details d-flex align-items-left justify-content-center ">
                         <div class="col-3 d-flex align-items-left flex-column">
                             <p class="description mb-3 ">Value in IDR</p>
-                            <input class="form-control" type="text" placeholder="0" aria-label="default input example">
+                            <input class="form-control" type="text" placeholder="0" aria-label="default input example" formControlName="idr">
                         </div> 
                         <div class="col-3 d-flex align-items-left flex-column">
                           <p class="description mb-3 ">Value in Grams</p>
-                          <input class="form-control" type="text" placeholder="0" aria-label="default input example">
+                          <input class="form-control" type="text" placeholder="0" aria-label="default input example" formControlName="gram">
                         </div> 
                         <div class="col-6 d-flex align-items-left flex-column">
                           <p class="description mb-3">With Click Button Above you Agree With our Terms and Condiition</p>
-                          <button class="next-button btn btn-warning" (click)="buyTransaction()">Next</button>
+                          <button class="next-button btn btn-warning" type="submit">Next</button>
                         </div> 
                     </div>  
+                </form>
                 </div> 
                     <div style="display: block">
                         <canvas baseChart
@@ -139,20 +141,25 @@
                 </div>
                 <div class="bg-white border-right border-left border-bottom tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                     <div class="transaction-tab col-sm-12 border p-3">
-                        <div class="transaction-tab transaction-details d-flex align-items-left justify-content-center ">
+                        <form (ngSubmit)="sellTransaction()" name="loginForm" [formGroup]="transactionForm">
+                    <div class="transaction-tab transaction-details d-flex align-items-left justify-content-center ">
+                        
                         <div class="col-3 d-flex align-items-left flex-column">
                             <p class="description mb-3 ">Value in IDR</p>
-                            <input class="form-control" type="text" placeholder="0" aria-label="default input example">
+                            <input class="form-control" type="text" placeholder="0" aria-label="default input example" formControlName="idr">
                         </div> 
+                        
                         <div class="col-3 d-flex align-items-left flex-column">
                           <p class="description mb-3 ">Value in Grams</p>
-                          <input class="form-control" type="text" placeholder="0" aria-label="default input example">
+                          <input class="form-control" type="text" placeholder="0" aria-label="default input example" formControlName="gram">
                         </div> 
                         <div class="col-6 d-flex align-items-left flex-column">
                           <p class="description mb-3">With Click Button Above you Agree With our Terms and Condiition</p>
-                          <button class="next-button btn btn-warning" (click)="sellTransaction()">Next</button>
-                        </div> 
+                          <button type="submit" class="next-button btn btn-warning" [disabled]="transactionForm.invalid" >Next</button>
+                        </div>
+                    
                     </div>  
+                </form> 
                 </div> 
                     <div style="display: block">
                         <canvas baseChart
@@ -162,7 +169,11 @@
                       </div>
                 </div>
                 
+
+                <router-outlet></router-outlet>
               </div>
+
+              
 
     
 

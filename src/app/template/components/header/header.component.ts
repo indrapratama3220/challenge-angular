@@ -12,23 +12,21 @@ export class HeaderComponent implements OnInit {
 
 
   navigateToGold() {
-    this.router.navigateByUrl('reusable/gold?id=40288ceb7913596e0179136412e30000')
-    console.log("test"); 
+    this.router.navigateByUrl('/reusable/gold?id=40288ceb7913596e0179136412e30000')
+    sessionStorage.setItem('productId', '40288ceb7913596e0179136412e30000')
   }
 
   navigateToPlatinum() {
-    this.router.navigateByUrl('reusable/gold?id=40288ceb7913596e01791365f2ac0004')
-    console.log("test");
-
+    this.router.navigateByUrl('/reusable/gold?id=40288ceb7913596e01791365f2ac0004')
+    sessionStorage.setItem('productId', '40288ceb7913596e01791365f2ac0004');
   }
 
   navigateToSilver() {
-    this.router.navigateByUrl('reusable/gold?id=40288ceb7913596e01791364fc470002')
-    console.log("test");
-    
+    this.router.navigateByUrl('/reusable/gold?id=40288ceb7913596e01791364fc470002')
+    sessionStorage.setItem('productId', '40288ceb7913596e01791364fc470002')
   }
-  ngOnInit(): void {
-  }
+  
+  ngOnInit(): void {}
 
   nowDate = new Date();
 

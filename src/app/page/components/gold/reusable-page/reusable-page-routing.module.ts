@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { TransactionComponent } from '../transaction/transaction.component';
 import { ReusablePageComponent } from './reusable-page.component';
 
 const routes: Routes = [
@@ -10,7 +11,8 @@ const routes: Routes = [
       {
         path: 'gold',
         loadChildren: () => import('../gold.module').then((m) => m.GoldModule)
-    },
+      },
+      
     ]
   }
 ];

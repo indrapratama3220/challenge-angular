@@ -1,6 +1,8 @@
 import { Component, OnInit,Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms'
-import { Customer } from '../../gold/models/customer.model';
+import { Router } from '@angular/router';
+import { FlashService } from 'src/app/shared/services/flash.service';
+import { Customer } from '../../portofolio/models/customer.model';
 import { LoginService } from '../service/login.service';
 
 
@@ -19,7 +21,9 @@ export class LoginComponent implements OnInit {
   customer: Customer;
 
   constructor(private fb: FormBuilder,
+              private readonly router: Router,
               private readonly loginService: LoginService,
+              private readonly flash: FlashService
               ) {
   }
 
@@ -33,22 +37,21 @@ export class LoginComponent implements OnInit {
   onLogin(): void {
     if (!this.loginForm.valid) return;
     const loginData: any = this.loginForm.value;
+    const redirectBackUrl = this.flash.get();
 
     this.loginService.login({
       email: loginData.email,
       password: loginData.password
     }).subscribe((response) => {
       if(response) {
-        console.log(response);
-        
         this.customer = response;
-
         sessionStorage.setItem('id', this.customer.id);
+        this.router.navigateByUrl(redirectBackUrl || '/')
+        
       }
     }), (error) => {
       const message = error.error.error
       alert(message)
     }
   }
-
 }

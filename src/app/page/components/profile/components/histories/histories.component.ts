@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Purchase } from '../../models/purchase.model';
+import { ProfileService } from '../../service/profile.service';
 
 @Component({
   selector: 'app-histories',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HistoriesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private readonly profileService:ProfileService) { }
+
+  purchaseHistory: Purchase;
+  
 
   ngOnInit(): void {
+    this.profileService.getHistoryTransaction().subscribe((response) => {
+      this.purchaseHistory = response;
+      console.log(response);
+      
+    })
+
+
   }
 
 }

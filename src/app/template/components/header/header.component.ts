@@ -12,17 +12,17 @@ export class HeaderComponent implements OnInit {
 
 
   navigateToGold() {
-    this.router.navigateByUrl('/reusable/gold?id=40288ceb7913596e0179136412e30000')
+    this.router.navigateByUrl('/portofolio?id=40288ceb7913596e0179136412e30000')
     sessionStorage.setItem('productId', '40288ceb7913596e0179136412e30000')
   }
 
   navigateToPlatinum() {
-    this.router.navigateByUrl('/reusable/gold?id=40288ceb7913596e01791365f2ac0004')
+    this.router.navigateByUrl('/portofolio?id=40288ceb7913596e01791365f2ac0004')
     sessionStorage.setItem('productId', '40288ceb7913596e01791365f2ac0004');
   }
 
   navigateToSilver() {
-    this.router.navigateByUrl('/reusable/gold?id=40288ceb7913596e01791364fc470002')
+    this.router.navigateByUrl('portofolio?id=40288ceb7913596e01791364fc470002')
     sessionStorage.setItem('productId', '40288ceb7913596e01791364fc470002')
   }
   

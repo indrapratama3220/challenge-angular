@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, Observer, of } from "rxjs";
 import { map, retry, tap } from "rxjs/operators";
-import { CreatePocket } from '../models/create-pocket.model';
 import { Pocket } from '../models/pocket.model';
 
 
@@ -10,7 +9,7 @@ import { Pocket } from '../models/pocket.model';
 @Injectable({
   providedIn: 'root'
 })
-export class GoldService {
+export class PortofolioService {
   constructor(private http: HttpClient) { }
 
   
@@ -64,4 +63,6 @@ export class GoldService {
         .get(`http://localhost:8080/product/${id}/history`)
           .pipe(map((response) => response));
     }
+
+    
 }

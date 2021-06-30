@@ -1,7 +1,7 @@
 import { Injectable, EventEmitter,Output } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 
-import { LoginData } from '../models/login';
+import { LoginData } from '../../page/components/login/models/login';
 
 
 export const AUTH_USER_DATA = 'user_data'

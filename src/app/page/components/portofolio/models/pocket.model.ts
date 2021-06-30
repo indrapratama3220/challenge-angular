@@ -1,5 +1,5 @@
-import { Product } from '../models/product.model';
-import { Customer } from '../models/customer.model';
+import { Product } from './product.model';
+import { Customer } from './customer.model';
 
 
 export interface Pocket {

@@ -1,35 +1,18 @@
 <h1 style="margin-left: 10px; margin-top: 10px;">My Transaction</h1>
-<mat-card class="product-description mat-elevation-z4 col-12 mb-sm-4">
-                
-    <div class="transaction-details d-flex align-items-left ">
-        <div class="col-10 d-flex align-items-left flex-column">
-            <p class="description mb-3">Buy</p>
-            <p class="description mb-3">Products</p>
-            <p class="description mb-3">Product Name: Gold</p>
-            <p class="description mb-3">Quantity Gram: 1 Gram</p>
-        </div> 
-        <div class="col-2 d-flex align-items-left flex-column">
-            <p class="description mb-3">25 March</p>
-            <p class="description mb-3">Total Price</p>
-            <p class="title mb-3">Rp. 850.000</p>
-            <button class="btn btn-success">Details</button>
-        </div> 
-    </div>    
-</mat-card> 
 
-<mat-card class="product-description mat-elevation-z4 col-12 mb-sm-4">
+<mat-card class="product-description mat-elevation-z4 col-12 mb-sm-4" *ngFor="let purchase of purchaseHistory">
                 
     <div class="transaction-details d-flex align-items-left ">
         <div class="col-10 d-flex align-items-left flex-column">
-            <p class="description mb-3">Buy</p>
+            <p class="description mb-3">{{purchase.purchaseDetails[0].price}}</p>
             <p class="description mb-3">Products</p>
-            <p class="description mb-3">Product Name: Gold</p>
-            <p class="description mb-3">Quantity Gram: 1 Gram</p>
+            <p class="description mb-3">Product Name: {{purchase.purchaseDetails[0].product.productName}}</p>
+            <p class="description mb-3">Quantity Gram: {{purchase.purchaseDetails[0].quantityInGram}} Gram</p>
         </div> 
         <div class="col-2 d-flex align-items-left flex-column">
-            <p class="description mb-3">25 March</p>
+            <p class="description mb-3">{{purchase.purchaseDate}}</p>
             <p class="description mb-3">Total Price</p>
-            <p class="title mb-3">Rp. 850.000</p>
+            <p class="title mb-3">Rp. {{purchase.purchaseDetails[0].quantityInGram * purchase.purchaseDetails[0].price}}</p>
             <button class="btn btn-success">Details</button>
         </div> 
     </div>    

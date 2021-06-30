@@ -5,6 +5,7 @@ import { ProfileRoutingModule } from './profile-routing.module';
 import { ProfileComponent } from './components/profile.component';
 import { MatCardModule } from '@angular/material/card';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     ProfileRoutingModule, 
     MatCardModule,
-    RouterModule
+    RouterModule,
+    HttpClientModule
   ], exports:[ProfileComponent]
 })
 export class ProfileModule { }

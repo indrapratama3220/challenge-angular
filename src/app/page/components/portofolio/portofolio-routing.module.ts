@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { GoldComponent } from './components/gold.component';
+import { PortofolioComponent } from './components/portofolio.component';
+import { PortofolioModule } from './portofolio.module';
 import { TransactionComponent } from './transaction/transaction.component';
 
 const routes: Routes = [
   {
     path:'',
-    component:GoldComponent, 
+    component: PortofolioComponent
   }
 
 ];
@@ -15,4 +16,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class GoldRoutingModule { }
+export class PortofolioRoutingModule { }

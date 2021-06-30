@@ -1,28 +1,26 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { GoldService } from '../service/gold-price.service';
+import { PortofolioService } from '../service/portofolio.service';
 import { Pocket } from '../models/pocket.model'
 import { Product } from '../models/product.model';
-import { CreatePocket } from '../models/create-pocket.model';
 import { Customer } from '../models/customer.model';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { HistoryPrice } from '../models/history-price.model';
 
-import { Observable } from 'rxjs';
 
 
 
 @Component({
-  selector: 'app-gold',
-  templateUrl: './gold.component.html',
-  styleUrls: ['./gold.component.scss']
+  selector: 'app-portofolio',
+  templateUrl: './portofolio.component.html',
+  styleUrls: ['./portofolio.component.scss']
 })
-export class GoldComponent implements OnInit, OnChanges {
+export class PortofolioComponent implements OnInit, OnChanges {
 
   @Input() id: number = 0;
 
-  constructor(private readonly goldService: GoldService,
+  constructor(private readonly portofolioService: PortofolioService,
               private formBuilder: FormBuilder,
               private modalService: NgbModal,
               private readonly activatedRoute: ActivatedRoute,
@@ -43,7 +41,7 @@ export class GoldComponent implements OnInit, OnChanges {
   
   products:Product[] = [];
 
-  product: Product;
+  product: Product ={};
   pocketForm: FormGroup;
   transactionForm: FormGroup;
 
@@ -62,17 +60,14 @@ export class GoldComponent implements OnInit, OnChanges {
     product:this.productTest
   };
 
-  
-    
   totalQty: number = 0
-
   submitPocket(): void {
     this.pocket.pocketName = this.pocketForm.value.namePocket
-    this.goldService.createPocket(this.pocket).subscribe();
+    this.portofolioService.createPocket(this.pocket).subscribe();
   }
 
   deletePocket(id:string): void {
-    this.goldService.deletePocket(id).subscribe();
+    this.portofolioService.deletePocket(id).subscribe();
   }
 
   setPocket(pocket: Pocket): void {
@@ -81,7 +76,7 @@ export class GoldComponent implements OnInit, OnChanges {
 
   updatePocket():void {
     this.pocket.pocketName = this.pocketForm.value.namePocket
-    this.goldService.updatePocket(this.pocket).subscribe();
+    this.portofolioService.updatePocket(this.pocket).subscribe();
   }
 
   buyTransaction(){
@@ -99,10 +94,7 @@ export class GoldComponent implements OnInit, OnChanges {
     sessionStorage.setItem('productValueInGram', this.transactionForm.value.gram)
   }
 
-  
-
   ngOnInit(): void {
-
 
     this.pocketForm = new FormGroup({
       namePocket: new FormControl('',[Validators.required])
@@ -113,9 +105,7 @@ export class GoldComponent implements OnInit, OnChanges {
       idr: new FormControl('',[Validators.required])
     })
 
-    this
-
-    this.goldService.getAllProduct().subscribe((response) => {
+    this.portofolioService.getAllProduct().subscribe((response) => {
       this.products = response
       console.log(response);
       
@@ -125,7 +115,7 @@ export class GoldComponent implements OnInit, OnChanges {
     .subscribe((queryParams: Params) => {
         const id = queryParams.id;
         this.productTest.id = id;
-        this.goldService.getProductById(id).subscribe((response) => {
+        this.portofolioService.getProductById(id).subscribe((response) => {
           this.product = response;
           this.totalQty = 0;
           this.pieChartLabels1 = []
@@ -138,7 +128,7 @@ export class GoldComponent implements OnInit, OnChanges {
         console.log("test");
         
         
-        this.goldService.getAllPocket().subscribe((response) => {
+        this.portofolioService.getAllPocket().subscribe((response) => {
           this.pockets = response.filter(pocket => pocket.product.id == id)
           
           console.log(this.pockets);
@@ -148,7 +138,7 @@ export class GoldComponent implements OnInit, OnChanges {
             }
         })
     
-        this.goldService.getHistoryPriceByProductId(id).subscribe((response) => {
+        this.portofolioService.getHistoryPriceByProductId(id).subscribe((response) => {
           this.historyPrice = response
           
           for (let index = 0; index < this.historyPrice.length; index++) {

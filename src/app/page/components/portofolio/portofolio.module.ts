@@ -1,23 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { GoldRoutingModule } from './gold-routing.module';
+import { PortofolioRoutingModule } from './portofolio-routing.module';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
-import { GoldComponent } from './components/gold.component';
+import { PortofolioComponent } from './components/portofolio.component';
 import { ChartsModule } from 'ng2-charts';
 
 
 
 @NgModule({
-  declarations: [ GoldComponent],
+  declarations: [ PortofolioComponent],
   imports: [
     CommonModule,
-    GoldRoutingModule,
+    PortofolioRoutingModule,
     MatCardModule,
     MatButtonModule, 
     MatInputModule, 
@@ -26,6 +26,6 @@ import { ChartsModule } from 'ng2-charts';
     ChartsModule
     
      
-  ], exports:[GoldComponent]
+  ], exports:[PortofolioComponent]
 })
-export class GoldModule { }
+export class PortofolioModule { }

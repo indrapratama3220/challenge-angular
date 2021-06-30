@@ -119,15 +119,15 @@
                         <div class="transaction-tab transaction-details d-flex align-items-left justify-content-center ">
                         <div class="col-3 d-flex align-items-left flex-column">
                             <p class="description mb-3 ">Value in IDR</p>
-                            <input class="form-control" type="text" placeholder="0" aria-label="default input example" formControlName="idr">
+                            <input class="form-control" value="{{transactionForm.value.gram * product.productPriceBuy}}" type="text" placeholder="0" aria-label="default input example" formControlName="idr">
                         </div> 
                         <div class="col-3 d-flex align-items-left flex-column">
                           <p class="description mb-3 ">Value in Grams</p>
-                          <input class="form-control" type="text" placeholder="0" aria-label="default input example" formControlName="gram">
+                          <input class="form-control" value="{{transactionForm.value.idr / product.productPriceBuy}}" type="text" placeholder="0" aria-label="default input example" formControlName="gram">
                         </div> 
                         <div class="col-6 d-flex align-items-left flex-column">
                           <p class="description mb-3">With Click Button Above you Agree With our Terms and Condiition</p>
-                          <button class="next-button btn btn-warning" type="submit">Next</button>
+                          <button class="next-button btn btn-warning" type="submit" [disabled]="transactionForm.invalid">Next</button>
                         </div> 
                     </div>  
                 </form>
@@ -146,12 +146,12 @@
                         
                         <div class="col-3 d-flex align-items-left flex-column">
                             <p class="description mb-3 ">Value in IDR</p>
-                            <input class="form-control" type="text" placeholder="0" aria-label="default input example" formControlName="idr">
+                            <input class="form-control" value="{{transactionForm.value.gram * product.productPriceSell}}" type="text" placeholder="0" aria-label="default input example" formControlName="idr">
                         </div> 
                         
                         <div class="col-3 d-flex align-items-left flex-column">
                           <p class="description mb-3 ">Value in Grams</p>
-                          <input class="form-control" type="text" placeholder="0" aria-label="default input example" formControlName="gram">
+                          <input class="form-control" value="{{transactionForm.value.idr / product.productPriceSell}}"  type="text" placeholder="0" aria-label="default input example" formControlName="gram">
                         </div> 
                         <div class="col-6 d-flex align-items-left flex-column">
                           <p class="description mb-3">With Click Button Above you Agree With our Terms and Condiition</p>
